@@ -1,2 +1,2 @@
 test:
-	poetry run pytest null_object_pattern -vv
+	poetry run pytest kill_polymorphism -vv
