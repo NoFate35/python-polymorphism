@@ -1,2 +1,2 @@
 test:
-	poetry run pytest -vv
+	poetry run pytest kv_database -vv

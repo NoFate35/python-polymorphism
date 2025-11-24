@@ -1,4 +1,4 @@
-from solution import DatabaseConfigLoader
+from database_loader.solution import DatabaseConfigLoader
 from pathlib import Path
 import pytest
 
