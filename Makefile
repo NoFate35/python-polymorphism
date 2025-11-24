@@ -1,2 +1,2 @@
 test:
-	poetry run pytest kv_database -vv
+	poetry run pytest null_object_pattern -vv
