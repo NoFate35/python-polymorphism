@@ -5,7 +5,10 @@ class User():
     def __init__(self, email, current_subscription=None):
         self.email = email
         # BEGIN (write your solution here)
-        
+        if current_subscription:
+            self.current_subscription = current_subscription
+        else:
+            self.current_subscription = FakeSubscription(self)
         # END
 
     def get_current_subscription(self):

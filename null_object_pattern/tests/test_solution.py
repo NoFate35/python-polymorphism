@@ -1,5 +1,5 @@
-from null_object_pattern.user import User
-from null_object_pattern.subscription import Subscription
+from user import User
+from subscription import Subscription
 
 
 def test_subscription():
