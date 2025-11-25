@@ -1,2 +1,2 @@
 test:
-	poetry run pytest dependency_nversion -vv
+	poetry run pytest strategy_pattern -vv
