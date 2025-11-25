@@ -9,5 +9,6 @@ class Guest:
         return self.name
 
     # BEGIN (write your solution here)
-    
+    def greet(self) -> str:
+        return 'Nice to meet you Guest!'
     # END

@@ -9,5 +9,6 @@ class User:
         return self.name
 
     # BEGIN (write your solution here)
-    
+    def greet(self) -> str:
+        return f'Hello {self.name}!'
     # END
