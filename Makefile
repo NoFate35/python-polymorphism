@@ -1,2 +1,2 @@
 test:
-	poetry run pytest kill_polymorphism -vv
+	poetry run pytest dependency_nversion -vv
