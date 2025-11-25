@@ -1,9 +1,8 @@
 import re
 import subprocess
 from pathlib import Path
-
 import requests
-from dependency_nversion.weather_service import WeatherService
+from dependency_nversion.scripts.weather_service import WeatherService
 
 
 def test_weather_service():
@@ -16,7 +15,7 @@ def test_weather_service():
 
 def test_weather_app():
     p = Path(__file__).absolute().parent
-    app_path = p.joinpath("..", "src/scripts/weather.py")
+    app_path = p.joinpath("..", "scripts/weather.py")
     result = subprocess.run(
         ["poetry", "run", "python", app_path, "--city", "berlin"],
         capture_output=True,

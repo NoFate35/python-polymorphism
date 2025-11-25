@@ -1,3 +1,4 @@
+
 import argparse
 import requests
 from weather_service import WeatherService
@@ -6,8 +7,8 @@ from weather_service import WeatherService
 def main(city_name):
     # BEGIN (write your solution here)
     ws = WeatherService(requests)
-    response = ws.look_up('Moscow')
-    return response.text
+    response = ws.look_up(city_name)
+    return f'Temperature in {response['name']}: {response['temperature']}C'
     # END
 
 
