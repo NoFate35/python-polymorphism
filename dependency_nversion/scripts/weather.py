@@ -5,7 +5,9 @@ from weather_service import WeatherService
 
 def main(city_name):
     # BEGIN (write your solution here)
-    pass
+    ws = WeatherService(requests)
+    response = ws.look_up('Moscow')
+    return response.text
     # END
 
 
