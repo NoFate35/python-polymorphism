@@ -14,5 +14,9 @@ PARSERS = {
 
 # BEGIN (write your solution here)
 class ConfigFactory():
-    pass
+    def factory(path: str) -> Config:
+        _, ext = os.path.splitext(path)
+        raw_data = open(path).read()
+        data = PARSERS[ext].get_data(raw_data)
+        return Config(data)
 # END
