@@ -1,2 +1,2 @@
 test:
-	poetry run pytest dynamic_dispatching -vv
+	poetry run pytest factory_pattern -vv
