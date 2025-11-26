@@ -1,2 +1,2 @@
 test:
-	poetry run pytest strategy_pattern -vv
+	poetry run pytest dynamic_dispatching -vv
