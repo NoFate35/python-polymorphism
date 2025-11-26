@@ -15,12 +15,30 @@ class TicTacToe():
         self.level = STRATEGY[level]
 
     def go(self, raw:int = None, col:int = None) -> bool:
-        if raw is None:
-            self.level().step(self.field)
-        else:
-            self.field[raw][col] = 1
-        return self.is_winner()
-    def is_winner(self) -> bool:
-        pass
+        def make_step(field: list, raw: int , col: int, badge: int) -> None:
+            field[raw][col] = badge
 
+        if raw is None:
+            raw, col = self.level().analyze_field(self.field)
+            badge = 2
+        else:
+            badge = 1
+        make_step(self.field, raw, col, badge)
+        #print('self.fiiield', self.field)
+        return self.is_winner()
+
+
+    def is_winner(self) -> bool:
+        lines = [[(0, 1),(1, 1), (2, 1)],
+                 [(0, 0), (0, 1), (0, 2)],
+                 [(0, 0), (1, 1), (2, 2)],
+                 [(2, 0), (2, 1), (2, 2)],
+                 ]
+        for line in lines:
+            num = []
+            for point in line:
+                num.append(self.field[point[0]][point[1]])
+            if (num[0]==num[1]) and (num[0]==num[2]) and (num[0] != None):
+                return True
+        return False
 # END
