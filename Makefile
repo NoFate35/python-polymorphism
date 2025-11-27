@@ -1,2 +1,2 @@
 test:
-	poetry run pytest factory_pattern -vv
+	poetry run pytest decorator_pattern -vv
