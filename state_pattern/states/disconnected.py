@@ -7,7 +7,7 @@ class DisconnectedState:
         self.connection = connection
 
     def connect(self):
-        self.connection.state = self.STATES['connected'](self)
+        self.connection.set_state('connected')
     
     def disconnect(self):
         raise TcpConnectionError
@@ -16,5 +16,5 @@ class DisconnectedState:
         return 'disconnected'
     
     def write(self, word):
-        pass
+        raise TcpConnectionError
     # END

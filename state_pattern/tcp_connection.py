@@ -11,21 +11,23 @@ class TcpConnection:
         }
         self.ip = ip
         self.port = port
-        self.state = self.STATES['disconnected']
+        self.set_state('disconnected')
 
     def connect(self):
-        print('tcp connect', self.state)
-        self.state = self.STATES['connected'](self)
+        self.state.connect()
         
     
 
     def disconnect(self):
-        self.state = self.STATES['disconnected'](self)
+        self.state.disconnect()
     
     def get_current_state(self):
         return self.state.get_current_state()
     
     def write(self, word):
         self.state.write(word)
+    
+    def set_state(self, name):
+        self.state = self.STATES[name](self)
 
     # END
