@@ -1,2 +1,2 @@
 test:
-	poetry run pytest state_pattern -vv
+	poetry run pytest mixins -vv
