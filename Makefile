@@ -1,2 +1,2 @@
 test:
-	poetry run pytest mixins -vv
+	poetry run pytest PROBATIONS/game_character_state -vv
