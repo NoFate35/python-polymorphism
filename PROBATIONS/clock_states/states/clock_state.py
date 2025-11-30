@@ -13,11 +13,24 @@ class ClockState():
         self.clock.set_state('alarm')
 
     def tick(self):
-        self.clock.minutes += 1
+        minutes = self.clock.minutes
+        minutes += 1
+        if minutes / 60 == 1.0:
+            self.clock.click_h()
+            self.clock.click_m()
+        else:
+            self.clock.minutes = minutes
+        if self.clock.is_alarm_time() and self.clock.is_alarm_on():
+            self.clock.set_state('bell')
 
     def click_h(self):
-    	self.clock.hours += 1
+       self.clock.hours = (self.clock.hours + 1) % 24
 
     def click_m(self):
-    	self.clock.tick()
+        self.clock.minutes = (self.clock.minutes + 1) % 60
+
+    def is_alarm_time(self):
+        return (self.clock.hours, self.clock.minutes) == (self.clock.alarm_hours, self.clock.alarm_minutes)
+
+
 # END

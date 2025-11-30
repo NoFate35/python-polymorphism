@@ -8,7 +8,8 @@ class AlarmClock:
     def __init__(self):
         self.STATES = {
             'clock': ClockState,
-            'alarm': AlarmState
+            'alarm': AlarmState,
+            'bell': BellState
         }
         self.set_state('clock')
         self.hours = 12
@@ -45,15 +46,15 @@ class AlarmClock:
         self.state.tick()
     
     def long_click_mode(self):
-        if self.alarm:
-            self.alarm = False
-        else:
-            self.alarm = True
+        self.alarm = not self.alarm
 
     def click_h(self):
-    	self.state.click_h()
+        self.state.click_h()
 
     def click_m(self):
-    	self.state.click_m()
+        self.state.click_m()
+
+    def is_alarm_time(self):
+        return self.state.is_alarm_time()
 
 # END
