@@ -14,4 +14,10 @@ class ClockState():
 
     def tick(self):
         self.clock.minutes += 1
+
+    def click_h(self):
+    	self.clock.hours += 1
+
+    def click_m(self):
+    	self.clock.tick()
 # END

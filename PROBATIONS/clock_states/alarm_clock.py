@@ -50,4 +50,10 @@ class AlarmClock:
         else:
             self.alarm = True
 
+    def click_h(self):
+    	self.state.click_h()
+
+    def click_m(self):
+    	self.state.click_m()
+
 # END
