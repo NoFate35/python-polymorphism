@@ -13,6 +13,7 @@ def character():
 def capture_output():
     captured_output = StringIO()
     sys.stdout = captured_output
+    #print('sys.stdout', sys.__stdout__)
     yield captured_output
     sys.stdout = sys.__stdout__
 
@@ -28,6 +29,7 @@ def test_default_state(character, capture_output):
     assert actual_damage == character.base_attack_power
 
     actual_output = capture_output.getvalue().strip()
+    
     assert "Hero attacks for 20 damage" in actual_output
 
     expected_representation = "Hero (HP: 100/100, AP: 20, State: Normal)"

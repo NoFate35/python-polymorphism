@@ -1,2 +1,2 @@
 test:
-	poetry run pytest PROBATIONS/hotels_dynamic_dispatch -vv
+	poetry run pytest PROBATIONS/game_character_state --capture=no

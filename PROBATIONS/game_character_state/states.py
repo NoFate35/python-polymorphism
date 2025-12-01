@@ -24,8 +24,29 @@ class State(ABC):
 
 
 # BEGIN (write your solution here)
-class NormalState:
-    pass
+class NormalState(State):
+    def __init__(self, character):
+    	self.character = character
+    	self.enter()
+    	
+    def handle_attack(self):
+    	return self.character.base_attack_power
+    
+    def enter(self):
+    	print('enters normal state')
+    
+    def exit(self):
+    	pass
+    
+    def get_title(self):
+        return 'Normal'
+    
+    def update(self):
+        pass
+    def __str__(self):
+    	return(self.character)
+    	
+    	
 
 class PoisonedState:
     pass
