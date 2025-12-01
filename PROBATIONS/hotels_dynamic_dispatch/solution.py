@@ -7,8 +7,6 @@ def find_the_cheapest_service(data, predicates=None):
     	predicates = {}
     default = {'max': float('inf'), 'min': -float('inf')}
     new_predicates = {**default, **predicates}
-    print('predicates', predicates, 'new_predicates', new_predicates)
     filter_data = find_all_matching(data, new_predicates)
     return filter_data
-    #print('data', data, 'predicates', predicates)
     # END
