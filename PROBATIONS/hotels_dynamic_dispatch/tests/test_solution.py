@@ -1,5 +1,6 @@
 import sys
 sys.path.append('/home/ivan/python-polymorphism/PROBATIONS/hotels_dynamic_dispatch')
+sys.path.append('/data/data/com.termux/files/home/python-polymorphism/PROBATIONS/hotels_dynamic_dispatch')
 from solution import find_the_cheapest_service
 import json
 import pytest
