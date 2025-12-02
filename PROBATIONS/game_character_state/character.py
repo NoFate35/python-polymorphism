@@ -17,6 +17,7 @@ class Character:
         return damage
 
     def take_damage(self, damage):
+        print('self.current_health', self.current_health, 'damage', damage, )
         if damage >= self.current_health:
             raise ValueError(f"{self.name} leaves the game")
         self.current_health -= damage
