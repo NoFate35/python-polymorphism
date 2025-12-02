@@ -27,22 +27,23 @@ class State(ABC):
 class NormalState(State):
     def __init__(self, character):
         self.character = character
-        self.enter()
+
     
     def handle_attack(self):
-        return self.character.base_attack_power
+        return self.character.current_attack_power
     
     def enter(self):
-        print('enters normal state')
+        print(f'{self.character.name} enters normal state')
     
     def exit(self):
-        print('Hero exits normal state')
+        print(f'{self.character.name} exits normal state')
 
     def get_title(self):
         return 'Normal'
     
     def update(self):
         self.character.current_attack_power = self.character.base_attack_power
+    
     def __str__(self):
     	return(self.character)
     	
@@ -51,18 +52,17 @@ class NormalState(State):
 class PoisonedState(State):
     def __init__(self, character):
         self.character = character
-        self.enter()
         self.poisoned_current_health = self.character.current_health - 5
         self.poisoned_attack_power = self.character.base_attack_power // 2
 
     def enter(self):
-        print('Hero is poisoned')
+        print(f'{self.character.name} is poisoned')
 
     def get_title(self):
         return 'Poisoned'
  
     def exit(self):
-        print('Hero is no longer poisoned')
+        print(f'{self.character.name} is no longer poisoned')
 
     def update(self):
         self.character.current_health = self.poisoned_current_health
@@ -86,13 +86,13 @@ class BerserkState(State):
         self.berserk_attack_power = self.character.base_attack_power * 2
 
     def enter(self):
-        print('Hero goes berserk')
+        print(f'{self.character.name} goes berserk')
 
     def get_title(self):
         return 'Berserk'
  
     def exit(self):
-        print('Hero calms down')
+        print(f'{self.character.name} calms down')
 
     def update(self):
         self.character.current_health = self.berserk_current_health
@@ -116,13 +116,13 @@ class FrozenState(State):
         self.frozen_attack_power = 0
 
     def enter(self):
-        print('Hero is frozen')
+        print(f'{self.character.name} is frozen')
 
     def get_title(self):
         return 'Frozen'
  
     def exit(self):
-        print('Hero is no longer frozen')
+        print(f'{self.character.name} is no longer frozen')
 
     def update(self):
         self.character.current_health = self.frozen_current_health
