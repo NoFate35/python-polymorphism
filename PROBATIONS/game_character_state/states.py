@@ -48,8 +48,31 @@ class NormalState(State):
     	
     	
 
-class PoisonedState:
-    pass
+class PoisonedState(State):
+    def __init__(self, character):
+    	self.character = character
+    	self.enter()
+
+    def enter(self):
+    	print('is poisoned')
+
+    def get_title(self):
+        return 'Poisoned'
+ 
+    def exit(self):
+        print('is no longer poisoned')
+
+    def update(self):
+        new_current_health = self.character.max_health
+        new_attack_power = self.character.base_attack_power
+        self.character.current_health = new_current_health - 5
+        self.character.current_attack_power = new_attack_power // 2
+        
+    def handle_attack(self):
+    	pass
+
+    def __str__(self):
+    	return(self.character)
     
 class BerserkState:
     pass
